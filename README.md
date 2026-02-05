@@ -21,7 +21,7 @@ Sistema de control remoto para brazo robótico con ESP32 via WiFi.
 ## 🛠️ Quick Start
 ```bash
 # 1. Clonar repositorio
-git clone https://github.com/tuusuario/brazo-robotico.git
+git clone https://github.com/GizzlyFacu/RemoteArm.git
 # 2. Ver setup específico por módulo
 - Firmware: ver /firmware/README.md
 - Interfaz: ver /interface/README.md
