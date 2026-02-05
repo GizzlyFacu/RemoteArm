@@ -4,6 +4,7 @@
   <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3prMXd6NndleGo2aHBmczc3aWlieGp2NWJnY3owcTJ4YjNrYmJrbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/geER6DTZi4LQU5OOfO/giphy.gif" width="270"/>
   <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG9mMzVqNXhnOGt6ZnZ4MDloZWk1bTBvY2s5dTlhODF6OXp3M2t3MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/V4NSR1NG2p0KeJJyr5/giphy.gif" width="270"/>
 </div>
+
 ## 🚀 Descripción del Proyecto
 Sistema de control remoto para brazo robótico con ESP32 via WiFi.
 
