@@ -1,7 +1,7 @@
 #Build Folders
 conanbuild*/
 meson-build*/
-*.buid.user
+*.build.user
 
 # C++ objects and libs
 *.slo
