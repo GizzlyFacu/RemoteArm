@@ -1,8 +1,8 @@
 # RemoteArm
 <div align="center">
-  <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG9mMzVqNXhnOGt6ZnZ4MDloZWk1bTBvY2s5dTlhODF6OXp3M2t3MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/V4NSR1NG2p0KeJJyr5/giphy.gif" width="270" height="270"/>
+  <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG9mMzVqNXhnOGt6ZnZ4MDloZWk1bTBvY2s5dTlhODF6OXp3M2t3MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/V4NSR1NG2p0KeJJyr5/giphy.gif" width="270" height="200"/>
   <img src="https://media1.tenor.com/m/4B8pbZNr0_YAAAAC/esp32devkit-esp32.gif" width="270" height="270"/>
-  <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG9mMzVqNXhnOGt6ZnZ4MDloZWk1bTBvY2s5dTlhODF6OXp3M2t3MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/V4NSR1NG2p0KeJJyr5/giphy.gif" width="270" height="270"/>
+  <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG9mMzVqNXhnOGt6ZnZ4MDloZWk1bTBvY2s5dTlhODF6OXp3M2t3MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/V4NSR1NG2p0KeJJyr5/giphy.gif" width="270" height="200"/>
 </div>
 
 ## 🚀 Descripción del Proyecto
