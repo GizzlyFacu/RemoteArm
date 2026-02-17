@@ -1,55 +1,45 @@
 #include <iostream>
 #include <boost/asio.hpp>
 #include <spdlog/spdlog.h>
-#include <spdlog/details/os.h>
-#include <spdlog/sinks/stdout_sinks.h>
-#include <spdlog/sinks/basic_file_sink.h>
-#include <spdlog/sinks/stdout_color_sinks.h>
 #include <memory>
+using boost::asio::ip::tcp;
+
 int main(){
+    try {
+        boost::asio::io_context io;
 
-    // Test spdlog
-    /*
-    spdlog::set_pattern("[%H:%M:%S.%e] [%l] %v");
-    spdlog::info("Hola mundo desde spdlog 👋");
-    spdlog::warn("Esto es un warning de prueba");
-    spdlog::error("Esto es un error de prueba");
-    */
+        // 1. Escuchar en el puerto 5555
+        tcp::acceptor acceptor(io, tcp::endpoint(tcp::v4(), 5555));
 
-    //auto logger = spdlog::basic_logger_mt("basic_logger", "logs/basic-log.txt");
+        std::cout << "Server listening on port 5555...\n";
 
-    // 1. Crear sink de archivo
-    auto file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>(
-        "armserver.log", true // true = append
-        );
+        // 2. Crear socket para el cliente
+        tcp::socket socket(io);
 
-    // 2. Crear logger con ese sink
-    auto logger = std::make_shared<spdlog::logger>("armserver", file_sink);
+        // 3. Bloquea hasta que alguien se conecta
+        acceptor.accept(socket);
 
-    // 3. Registrar y setear como default
-    spdlog::register_logger(logger);
-    spdlog::set_default_logger(logger);
+        std::cout << "Se conecto alguien esooow!\n";
 
-    // 4. Configuración básica
-    spdlog::set_level(spdlog::level::debug);
-    spdlog::set_pattern("[%H:%M:%S] [%l] %v");
+        // 4. Buffer para recibir datos
+        char data[1024];
 
-    // 5. Logs
-    SPDLOG_INFO("Servidor iniciado");
-    SPDLOG_DEBUG("Puerto TCP: {}", 5555);
-    SPDLOG_ERROR("Error al conectar con ESP32");
-    spdlog::info("Pepas");
+        // 5. Leer datos (bloqueante)
+        size_t length = socket.read_some(boost::asio::buffer(data));
 
-    /*
-    spdlog::logger logger ("custom logger",{console_sink});
-    logger.info("some info log");
-    logger.error("critical issue");
+        std::string received(data, length);
+        std::cout << "Se recibio el mensaje este nose que es: " << received << "\n";
 
-    // Test Boost.Asio
-    boost::asio::io_context io;
-    spdlog::info("Boost.Asio io_context creado correctamente");
-*/
+        // 6. Responder
+        std::string response = "Si llego el mensaje qlia\n";
+        boost::asio::write(socket, boost::asio::buffer(response));
 
+        std::cout << "Se envio la respuesta, cerrando conexion\n";
+    }
+    catch (std::exception& e) {
+        std::cerr << "Error qliao: " << e.what() << "\n";
+    }
+    // en
     return 0;
 
 }
