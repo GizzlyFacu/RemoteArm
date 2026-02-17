@@ -1,0 +1,11 @@
+[requires]
+boost/1.90.0
+spdlog/1.17.0
+
+[tool_requires]
+ccache/4.12.2
+
+
+[generators]
+PkgConfigDeps
+MesonToolchain

@@ -1,0 +1,7 @@
+[requires]
+spdlog/1.17.0
+boost/1.90.0
+
+[generators]
+PkgConfigDeps
+MesonToolchain
