@@ -10,9 +10,6 @@ Sistema de control remoto para brazo robótico con ESP32 via WiFi.
 
 ## 🏗️ Estructura del Proyecto
 - Pendiente
-## 👥 Team
-- **Facu Giz** (Software): Interfaz gráfica y servidor
-- **Inserte NickName** (Hardware): Control de motores y mecatrónica
 
 ## 📋 Prerequisitos
 - 💡 Pc (opcional)
