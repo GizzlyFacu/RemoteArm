@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/3d">
+        <file>balsam/meshes/plane_mesh.mesh</file>
+    </qresource>
+</RCC>
