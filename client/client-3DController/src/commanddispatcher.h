@@ -1,5 +1,6 @@
 #ifndef COMMANDDISPATCHER_H
 #define COMMANDDISPATCHER_H
+#include <memory>
 #include "parser.h"
 #include "brazovirtual.h"
 
@@ -18,12 +19,15 @@ class SetCommand:public ICommand{
 class CommandDispatcher
 {
 public:
-    CommandDispatcher(BrazoVirtual& brazoVirtual)
-        :  m_brazoVirtual(brazoVirtual){}
+    CommandDispatcher()=default;
 
+    void setBrazo(BrazoVirtual* brazoVirtual){
+        m_brazoVirtual=brazoVirtual;
+    }
     int sendCommands(const std::vector<ParsedCommand> &parsedCommands);
+
 private:
-    BrazoVirtual& m_brazoVirtual;
+    BrazoVirtual* m_brazoVirtual=nullptr;
     SetCommand setBrazoAngulo;
 
 };

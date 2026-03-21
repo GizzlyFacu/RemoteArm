@@ -4,6 +4,10 @@
 int CommandDispatcher::sendCommands(const std::vector<ParsedCommand> &parsedCommands)
 {
     std::cout<<"[COMMAND DISPATCHER::sendCommands]\n";
+    if (m_brazoVirtual==nullptr) {
+        std::cout<<"[ERROR] No se ha aplicado ningun brazo, utilizar 'CommandDispatcher::setBrazo' o el setBrazo de la interfaz que contiene a esta.";
+        return 0;
+    }
     for (const auto& cmd : parsedCommands) {
         std::cout << "Comando: \n";
         switch (cmd.type) {
@@ -12,12 +16,12 @@ int CommandDispatcher::sendCommands(const std::vector<ParsedCommand> &parsedComm
             //send 1er and 2nd parameters
             int angleValue;
             angleValue = std::stoi(cmd.params.at(1));
-            m_brazoVirtual.set(cmd.params.at(0),angleValue);
+            m_brazoVirtual->set(cmd.params.at(0),angleValue);
             break;
         case Command::GET:
             std::cout << "GET\n";
             //send 1er parametro
-            std::cout<<"Getting Parameter: ["<<cmd.params.at(0)<<"]="<<m_brazoVirtual.get(cmd.params.at(0))<<"\n";
+            std::cout<<"Getting Parameter: ["<<cmd.params.at(0)<<"]="<<m_brazoVirtual->get(cmd.params.at(0))<<"\n";
             break;
         case Command::RESET:
             std::cout << "RESET\n";
@@ -34,5 +38,5 @@ int CommandDispatcher::sendCommands(const std::vector<ParsedCommand> &parsedComm
 
         std::cout << "\n";
     }
-    return 0;
+    return 1;
 }

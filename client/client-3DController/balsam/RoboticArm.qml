@@ -40,37 +40,41 @@ Node {
         Node {
             id: lowbone
             objectName: "lowbone"
-            rotation: Qt.quaternion(0.707107, 0, -0.707107, 0)
+            rotation: VirtualArmQT.angleLowBone//Qt.quaternion(0.707107, 0, -0.707107, 0)
             scale: Qt.vector3d(1, 1, 1)
+
+                Behavior on rotation {
+                    QuaternionAnimation {
+                        duration: 1000
+                        type: QuaternionAnimation.Slerp
+                    }
+                }
             Node {
                 id: midbone
                 objectName: "midbone"
                 position: Qt.vector3d(0, 0.762302, 0)
                 //animacion epica
-                QuaternionAnimation{
-                    target: midbone
-                    property: "rotation"
-                    running: true
-                    duration: 5000
-                    from:Qt.quaternion(1, 0, 0, 0)//el que ya esta
-                    to:VirtualArmQT.angleMidBone//Qt.quaternion(0.92388, 0, 0, 0.382683)//45 grados en z del weso (mi x global)
-                    type:QuaternionAnimation.Slerp
-                }
+                rotation: VirtualArmQT.angleMidBone
+
+                    Behavior on rotation {
+                        QuaternionAnimation {
+                            duration: 1000
+                            type: QuaternionAnimation.Slerp
+                        }
+                    }
 
                 Node {
                     id: highbone
                     objectName: "highbone"
                     position: Qt.vector3d(0, 0.750844, 0)
+                    rotation: VirtualArmQT.angleHighBone
 
-                    QuaternionAnimation{
-                        target: highbone
-                        property: "rotation"
-                        running: true
-                        duration: 5000
-                        from:Qt.quaternion(1, 0, 0, 0)
-                        to:VirtualArmQT.angleHighBone
-                        type:QuaternionAnimation.Slerp
-                    }
+                        Behavior on rotation {
+                            QuaternionAnimation {
+                                duration: 1000
+                                type: QuaternionAnimation.Slerp
+                            }
+                        }
                 }
             }
         }

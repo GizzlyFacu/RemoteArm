@@ -12,6 +12,7 @@ set(CMAKE_AUTOUIC ON)
 find_package(Qt6 REQUIRED COMPONENTS Quick Quick3D)
 find_package(Qt6 REQUIRED COMPONENTS Core)
 find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
 
 qt_standard_project_setup(REQUIRES 6.8)
 
@@ -33,8 +34,9 @@ qt_add_qml_module(appRobotArmPrueba
     src/parservalidate.cpp src/parservalidate.h
     src/brazovirtual.cpp src/brazovirtual.h
     src/commanddispatcher.cpp src/commanddispatcher.h
-    src/commandprocessor.cpp src/commandprocessor.h
+    src/commandprocessorqt.h src/commandprocessorqt.cpp
     armadapter.h armadapter.cpp
+
 )
 target_include_directories(appRobotArmPrueba PRIVATE src)
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
@@ -51,6 +53,7 @@ set_target_properties(appRobotArmPrueba PROPERTIES
 target_link_libraries(appRobotArmPrueba
     PRIVATE Qt6::Quick Qt6::Quick3D
 )
+target_link_libraries(appRobotArmPrueba PRIVATE Qt6::Core)
 target_link_libraries(appRobotArmPrueba PRIVATE Qt6::Core)
 target_link_libraries(appRobotArmPrueba PRIVATE Qt6::Core)
 

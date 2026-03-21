@@ -4,6 +4,10 @@ Parser::Parser() {}
 
 int Parser::saveParameters(std::string &mensajes)
 {
+    if (mensajes.length() < 4) {
+        std::cout<< "[ERROR][Parser::saveParameter]El mensaje es demasiado corto (minimo 4 caracteres)\n";
+        return 0;
+    }
     std::istringstream stream(mensajes);
     std::string word;
     while (stream >> word) {
