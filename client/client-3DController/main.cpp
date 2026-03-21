@@ -1,15 +1,16 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <functional>
-#include "commandprocessor.h"
+#include "commandprocessorqt.h"
 #include "armadapter.h"
+#include "brazovirtual.h"
 int main(int argc, char *argv[])
 {
 
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
 
-    std::string mensajes =
+    std::string mensajesEjemplo =
         "GET LOW "
         "SET MID 20 "
         "SET HIGH 50 "
@@ -34,7 +35,10 @@ int main(int argc, char *argv[])
     brazo.subscribe(subscriberMidBone);
     brazo.subscribe(subscriberHighBone);
 
-    CommandProcessor cmd(mensajes,brazo);
+    CommandProcessorQT cmd(&app);
+    cmd.setBrazo(brazo);
+    qmlRegisterSingletonInstance<CommandProcessorQT>("com.giz.cmdVirtualArmQT", 1, 0, "CmdVirtualArmQT", &cmd);
+
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,

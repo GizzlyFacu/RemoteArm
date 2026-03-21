@@ -1,6 +1,7 @@
 #ifndef PARSER_H
 #define PARSER_H
 #include <iostream>
+#include <string>
 #include <sstream>
 #include <vector>
 #include <unordered_map>

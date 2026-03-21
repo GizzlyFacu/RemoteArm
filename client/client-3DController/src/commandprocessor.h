@@ -8,7 +8,7 @@
 class CommandProcessor
 {
 public:
-    CommandProcessor(std::string& Message,BrazoVirtual& BrazoVirt);
+    CommandProcessor(std::string& Message);
 
 private:
     BrazoVirtual& m_brazoVirtual;
