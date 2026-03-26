@@ -8,10 +8,10 @@
 class CommandProcessor
 {
 public:
-    CommandProcessor(std::string& Message);
-
+    CommandProcessor()=default;
+    void setBrazo(BrazoVirtual& BrazoVirt);
+    void sendMessage(std::string Message);
 private:
-    BrazoVirtual& m_brazoVirtual;
     Parser m_parser;
     ParserValidate m_parserValider;
     CommandDispatcher m_cmdDispatcher;

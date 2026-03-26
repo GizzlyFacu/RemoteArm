@@ -35,6 +35,7 @@ qt_add_qml_module(appRobotArmPrueba
     src/brazovirtual.cpp src/brazovirtual.h
     src/commanddispatcher.cpp src/commanddispatcher.h
     src/commandprocessorqt.h src/commandprocessorqt.cpp
+    src/commandprocessor.h src/commandprocessor.cpp
     armadapter.h armadapter.cpp
 
 )

@@ -10,8 +10,6 @@ project('client-debug', 'cpp',
 )
 
 boost_dep=dependency('boost', method:'pkg-config')
-spdlog_dep=dependency('spdlog', method:'pkg-config')
-
 # Para windou boost necesita "Ws2_32.lib" y "wsock32"
 if host_machine.system() == 'windows'
   win_args = ['-lws2_32', '-lwsock32']
@@ -20,4 +18,4 @@ else
 endif
 
 executable('client-app',
-  'src/main.cpp',dependencies:[boost_dep, spdlog_dep],link_args: win_args)
+  'src/main.cpp',dependencies:boost_dep,link_args: win_args)
