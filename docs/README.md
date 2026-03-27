@@ -14,8 +14,6 @@ This connects everything mentioned above to the arm. There is an observer arm* i
 
 ## VirtualArm.h
 This is the "master arm," the one connected to the CommandDispatcher.
-
-## VirtualArm.h 
 From this, you can create other arms that "subscribe" to its properties using `std::function`, for example:
 ## ArmAdapter.h
 This is the example 3D arm in Qt. Each bone is subscribed to each virtual bone of the master arm, so when the virtual arm receives new modifications to its bones, it notifies the armAdapter to update its own.
