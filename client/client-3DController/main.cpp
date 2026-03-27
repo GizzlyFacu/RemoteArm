@@ -14,21 +14,21 @@ int main(int argc, char *argv[])
         "GET LOW "
         "SET MID 20 "
         "SET HIGH 50 "
-        "PING "
-        "RESET ";
+        "PING(NOT IMPLEMENTED YET) "
+        "RESET(NOT IMPLEMENTED YET) ";
 
     BrazoVirtual brazo;
     ArmAdapter virtualArmQT;
     qmlRegisterSingletonInstance<ArmAdapter>("com.giz.virtualArmQT", 1, 0, "VirtualArmQT", &virtualArmQT);
     //conectando cada hueso de brazo con virtualArmQT
     std::function<void()> subscriberLowBone=[&brazo,&virtualArmQT](){
-        virtualArmQT.setAngleLowBoneFromINT(brazo.get("LOW"));
+        virtualArmQT.setAngleLowBoneFromINT(brazo.get("L"));
     };
     std::function<void()> subscriberMidBone=[&brazo,&virtualArmQT](){
-        virtualArmQT.setAngleMidBoneFromINT(brazo.get("MID"));
+        virtualArmQT.setAngleMidBoneFromINT(brazo.get("M"));
     };
     std::function<void()> subscriberHighBone=[&brazo,&virtualArmQT](){
-        virtualArmQT.setAngleHighBoneFromINT(brazo.get("HIGH"));
+        virtualArmQT.setAngleHighBoneFromINT(brazo.get("H"));
     };
 
     brazo.subscribe(subscriberLowBone);

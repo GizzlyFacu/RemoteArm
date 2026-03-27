@@ -16,21 +16,8 @@ class CommandProcessorQT : public QObject
 public:
     explicit CommandProcessorQT(QObject *parent = nullptr);
 public slots:
-    void setBrazo(BrazoVirtual& BrazoVirt){
-        m_cmdDispatcher.setBrazo(&BrazoVirt);
-    }
-
-    void sendMessage(QString Message){
-        std::string message = Message.toStdString();
-        if (m_parser.saveParameters(message)) {
-            m_parser.printSavedParameters();
-            if (m_parserValider.validate(m_parser.parsedCommands)) {
-                if(m_cmdDispatcher.sendCommands(m_parser.parsedCommands)){
-                    std::cout<<"[[CMD]] mensaje enviado con exito";
-                }
-            }
-        }
-    }
+    void setBrazo(BrazoVirtual& BrazoVirt);
+    void sendMessage(QString Message);
 signals:
 private:
     Parser m_parser;

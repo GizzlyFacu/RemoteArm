@@ -6,7 +6,6 @@ ArmAdapter::ArmAdapter(QObject *parent)
 
 }
 
-
 QQuaternion ArmAdapter::angleLowBone() const
 {
     return m_angleLowBone;

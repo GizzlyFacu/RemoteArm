@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <boost/asio.hpp>
-
+#include <windows.h>
 int main(){
     //estructua mental
     /*
@@ -21,19 +21,20 @@ main()
 
         // Resolver (traduce host + puerto a endpoint)
         boost::asio::ip::tcp::resolver resolver(io_context);
-        auto endpoints = resolver.resolve("127.0.0.1", "5555");
+        auto endpoints = resolver.resolve("192.168.100.26", "1234");
 
         // Socket TCP
         boost::asio::ip::tcp::socket socket(io_context);
 
-        // Conexión
+        // Conexion
         boost::asio::connect(socket, endpoints);
 
         // Enviar mensaje
-        std::string message = "Hello Server\n";
+        std::string message = "SET H 20\n";
         boost::asio::write(socket, boost::asio::buffer(message));
 
         //Ver respuesta de mi server
+
         boost::asio::streambuf response;
         boost::asio::read_until(socket, response, "\n");
 
@@ -41,8 +42,12 @@ main()
         std::string reply;
         std::getline(response_stream, reply);
 
-        std::cout << "Respuesta: " << reply << "\n";
-        // Cerrar conexión
+        std::cout << "Respuesta: [" << reply << "]\n";
+
+        // Cerrar conexion
+        boost::system::error_code ec;
+        socket.shutdown(boost::asio::ip::tcp::socket::shutdown_send, ec);
+        socket.wait(socket.wait_read);  // Espera que el servidor cierre
         socket.close();
 
         std::cout << "Mensaje enviado correctamente.\n";
