@@ -1,4 +1,4 @@
-# About each file
+# About each file in each folder
 ---
 # Client - 3D Controller program
 ## CommandProcessor.h
@@ -22,4 +22,15 @@ This is the example 3D arm in Qt. Each bone is subscribed to each virtual bone o
 
 ## ESP32Actuator.h
 This is the same, but for Arduino. When the arm receives changes, it notifies the ESP32 to perform an action, for example, turning on an LED if a bone changes position.
+---
+# Client - Debug
+Made for debug and test the client-server connection and issues. You can actually send commands from here to the esp32. It works with Meson and Conan for 'Boost.Asio' so u will need these. Actually these two works separatedlysend commands to the server / see the actual hardware in 3D working) because I don't have the actual hardware to work with or someone that can help me with that to study the issues cases (jitter, security,etc).
+
+# Firmware - Arduino ESP32 Server
+This is the actual server, should control the hypotetical hardware arm.
+## Worfklow:
+You send an "SET M 45" -> ESP32 Server makes changes to midbone inside BrazoVirtual -> When BrazoVirtual Notifies something changes, you can "subscribe" the function that makes something.(in this case Blink a LED).
+
+# Server - Server Debug
+Was made for test client-server and understand how networks (and Boost.Asio)works, (Before start this project I didn't know anything about networks or clients, servers, sockets, etc)
 
