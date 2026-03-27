@@ -26,11 +26,11 @@ main()
         // Socket TCP
         boost::asio::ip::tcp::socket socket(io_context);
 
-        // Conexión
+        // Conexion
         boost::asio::connect(socket, endpoints);
 
         // Enviar mensaje
-        std::string message = "Eso Tilin\n";
+        std::string message = "SET H 20\n";
         boost::asio::write(socket, boost::asio::buffer(message));
 
         //Ver respuesta de mi server
@@ -44,7 +44,7 @@ main()
 
         std::cout << "Respuesta: [" << reply << "]\n";
 
-        // Cerrar conexión
+        // Cerrar conexion
         boost::system::error_code ec;
         socket.shutdown(boost::asio::ip::tcp::socket::shutdown_send, ec);
         socket.wait(socket.wait_read);  // Espera que el servidor cierre

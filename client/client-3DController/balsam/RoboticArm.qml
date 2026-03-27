@@ -9,6 +9,7 @@ Node {
         metalness: 1
         roughness: 1
         alphaMode: PrincipledMaterial.Opaque
+        baseColor: "#EEEEEE"
     }
     Skin {
         id: skin
@@ -31,7 +32,7 @@ Node {
         Model {
             id: plane
             objectName: "Plane"
-            source: "qrc:/3d/balsam/meshes/plane_mesh.mesh"
+            source: "qrc:/3d/mesh/plane_mesh.mesh"
             skin: skin
             materials: [
                 principledMaterial
