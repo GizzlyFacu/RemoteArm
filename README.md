@@ -6,7 +6,7 @@
 ## 🚀 Project Description
 Remote control system for a robotic arm using an ESP32 via WiFi.
 ## Workflow
-You send commands from the client "SET M 45" and the ESP32 server will make something with it, in this case: move a servo located in the mid part of the bone hierarchy 45 degrees.
+You send commands from the client "SET M 45"(see client-debug folder) and the ESP32 server will make something with it, in this case: move a servo located in the mid part of the bone hierarchy 45 degrees.
 - This actually works on a ESP32? yes, you can look at the firmware folder for the code (3 DOFS: low, mid, high), It works on mine. Change the ESP32Actuator.h for the actual functions(In this case I only use Serial.print for example)
 - What about the 3D visualization? is a rigged 3D model made in blender(yes really simple)working on a QT app for realtime visualization of the real hardware working. But in this case it was just for testing commands.
 
