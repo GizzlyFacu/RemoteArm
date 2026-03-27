@@ -20,7 +20,9 @@ This is the example 3D arm in Qt. Each bone is subscribed to each virtual bone o
 
 ## ESP32Actuator.h
 This is the same, but for Arduino. When the arm receives changes, it notifies the ESP32 to perform an action, for example, turning on an LED if a bone changes position.
+
 ---
+
 # Client - Debug
 Made for debug and test the client-server connection and issues. You can actually send commands from here to the esp32. It works with Meson and Conan for 'Boost.Asio' so u will need these. Actually these two works separatedlysend commands to the server / see the actual hardware in 3D working) because I don't have the actual hardware to work with or someone that can help me with that to study the issues cases (jitter, security,etc).
 
