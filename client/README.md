@@ -1,18 +1,22 @@
 # Arquitectura Principal
 ```txt
-[ UI / Visualizador / Control ]   GIZ
+ [ UI / Client Control ]   
+            |
+        (Mensaje)
+            |
+       [ Servidor ]
             |
         (Protocolo)
             |
-[ Servidor / Bridge / Gateway ]   GIZ
+[ Parser / CommandProcessor ]
             |
-        (Protocolo)
+        (Command)
             |
-[ Firmware / Control Bajo Nivel ] KONNOR
+       [ Firmware ]
             |
-        (GPIO / Drivers)
+        (Drivers)
             |
-        [ Hardware ]              KONNOR
+   [ Hardware (ESP32) ]        
 
 ```
 
