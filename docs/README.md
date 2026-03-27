@@ -24,7 +24,7 @@ This is the same, but for Arduino. When the arm receives changes, it notifies th
 ---
 
 # Client - Debug
-Made for debug and test the client-server connection and issues. You can actually send commands from here to the esp32. It works with Meson and Conan for 'Boost.Asio' so u will need these. Actually these two works separatedlysend commands to the server / see the actual hardware in 3D working) because I don't have the actual hardware to work with or someone that can help me with that to study the issues cases (jitter, security,etc).
+Made for debug and test the client-server connection and issues. You can actually send commands from here to the esp32. It works with Meson and Conan for 'Boost.Asio' so u will need these. Actually these two works separately (send commands to the server / see the actual hardware in 3D working) because I don't have the actual hardware to work with or someone that can help me with that to study the issues cases (jitter, security,etc).
 
 # Firmware - Arduino ESP32 Server
 This is the actual server, should control the hypotetical hardware arm.
