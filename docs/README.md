@@ -32,5 +32,5 @@ This is the actual server, should control the hypotetical hardware arm.
 You send an "SET M 45" -> ESP32 Server makes changes to midbone inside BrazoVirtual -> When BrazoVirtual Notifies something changes, you can "subscribe" the function that makes something.(in this case Blink a LED).
 
 # Server - Server Debug
-Was made for test client-server and understand how networks (and Boost.Asio)works, (Before start this project I didn't know anything about networks or clients, servers, sockets, etc)
+Was made for test client-server and understand how networks (and Boost.Asio)works, (Before start this project I knew nothing about networks, clients, servers or sockets)
 
