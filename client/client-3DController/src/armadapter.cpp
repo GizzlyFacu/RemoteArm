@@ -23,7 +23,7 @@ void ArmAdapter::setAngleLowBoneFromINT(int AngleLowBone)
 {
     //int to quaternion desde el eje Equis
 
-    QQuaternion newAngleLowBone = QQuaternion::fromAxisAndAngle(0.0f,0.0f,-1.0f,(float)AngleLowBone);
+    QQuaternion newAngleLowBone = QQuaternion::fromAxisAndAngle(1.0f,0.0f,0.0f,(float)AngleLowBone+90);
     if (m_angleLowBone == newAngleLowBone)
         return;
     m_angleLowBone = newAngleLowBone;
@@ -47,7 +47,7 @@ QQuaternion ArmAdapter::angleMidBone() const
 void ArmAdapter::setAngleMidBoneFromINT(int AngleMidBone)
 {
     //int to quaternion desde el eje Equis
-    QQuaternion newAngleMidBone = QQuaternion::fromAxisAndAngle(0.0f,0.0f,-1.0f,(float)AngleMidBone);
+    QQuaternion newAngleMidBone = QQuaternion::fromAxisAndAngle(1.0f,0.0f,0.0f,(float)AngleMidBone);
     if (m_angleMidBone == newAngleMidBone)
         return;
     m_angleMidBone = newAngleMidBone;
@@ -71,7 +71,7 @@ QQuaternion ArmAdapter::angleHighBone() const
 void ArmAdapter::setAngleHighBoneFromINT(int AngleHighBone)
 {
     //int to quaternion desde el eje Equis
-    QQuaternion newAngleHighBone = QQuaternion::fromAxisAndAngle(0.0f,0.0f,-1.0f,(float)AngleHighBone);
+    QQuaternion newAngleHighBone = QQuaternion::fromAxisAndAngle(1.0f,0.0f,0.0F,(float)AngleHighBone);
     if (m_angleHighBone == newAngleHighBone)
         return;
     m_angleHighBone = newAngleHighBone;

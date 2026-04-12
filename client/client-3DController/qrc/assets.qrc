@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/3d">
-        <file>mesh/plane_mesh.mesh</file>
+        <file>mesh/defaultMaterial_material11.mesh</file>
     </qresource>
     <qresource prefix="/text">
         <file>text/04B_30__.TTF</file>

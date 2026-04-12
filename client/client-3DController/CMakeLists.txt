@@ -23,7 +23,7 @@ qt_add_qml_module(appRobotArmPrueba
     VERSION 1.0
     QML_FILES
     qml/Main.qml
-    balsam/RoboticArm.qml
+    balsam/RoboticArm2.qml
     qml/OriginGizmo.qml
     RESOURCES
     qrc/assets.qrc

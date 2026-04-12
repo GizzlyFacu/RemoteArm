@@ -11,9 +11,9 @@ Window {
     title: qsTr("Robot Arm Client")
 
     FontLoader{
-            id:ttfLoader
-            source:"qrc:/text/text/04B_30__.TTF"
-        }
+        id:ttfLoader
+        source:"qrc:/text/text/04B_30__.TTF"
+    }
 
     Item {
         anchors.fill: parent
@@ -47,11 +47,9 @@ Window {
                 origin: sceneRoot
                 camera: cameraNode
             }
-
-            RoboticArm{
-                id: robotModel
-                scale: Qt.vector3d(100, 100, 100)
-                //position: Qt.vector3d(0,-60,0)
+            RoboticArm2{
+                id: robotModel2
+                scale: Qt.vector3d(1, 1, 1)
             }
             OriginGizmo {
                 targetNode: cameraNode
@@ -72,29 +70,42 @@ Window {
             width: 200
             anchors.horizontalCenter: parent.horizontalCenter
             id:textInserter
+            color: "Black"
             font{
                 family: "04b 30"
                 pixelSize: 15
             }
             placeholderText: qsTr("Enter Command")
+            placeholderTextColor: "Gray"
             background: Rectangle{
                 anchors.fill: parent
                 radius: 10
                 color: "#EEEEEE"
             }
+            Keys.onPressed: (event) => {
+                    if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
+                        event.accepted = true
+                        button1.clicked()
+                    }
+                }
         }
         Button{
             id:button1
             width: 200
             height: 50
             anchors.horizontalCenter: parent.horizontalCenter
-            text:"Send Command"
-            font{
-                family: "04b 30"
-                pixelSize: 15
-            }
-
+            text: "Send Command"
             onClicked: {CmdVirtualArmQT.sendMessage(textInserter.text);textInserter.text=""}
+            contentItem: Text {
+                text: parent.text
+                color: "Black"
+                font{
+                    family: "04b 30"
+                    pixelSize: 15
+                }
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
             focus:true
             background: Rectangle{
                 anchors.fill: parent
@@ -102,6 +113,7 @@ Window {
                 color:button1.pressed ? Qt.darker("#FAE251") : "#FAE251"
             }
         }
+
         DragHandler{}
     }
 }

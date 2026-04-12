@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     CommandProcessorQT cmd(&app);
     cmd.setBrazo(brazo);
     qmlRegisterSingletonInstance<CommandProcessorQT>("com.giz.cmdVirtualArmQT", 1, 0, "CmdVirtualArmQT", &cmd);
-
+    cmd.sendMessage("SET L 0");
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,

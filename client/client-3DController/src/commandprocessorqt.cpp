@@ -11,7 +11,7 @@ void CommandProcessorQT::setBrazo(BrazoVirtual &BrazoVirt)
 
 void CommandProcessorQT::sendMessage(QString Message)
 {
-    std::string message = Message.toStdString();
+    std::string message = Message.toUpper().toStdString();
     if (m_parser.saveParameters(message)) {
         m_parser.printSavedParameters();
         if (m_parserValider.validate(m_parser.parsedCommands)) {
