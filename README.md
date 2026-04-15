@@ -1,6 +1,6 @@
 # RemoteArm
 <div align="center">
-  <img src="./docs/assets/client3DExample.gif" />
+  <img width="636" height="478" alt="armExample" src="https://github.com/user-attachments/assets/1975bfb4-ecea-431b-a346-564aa8df685d" />
 </div>
 
 ## 🚀 Project Description
