@@ -1,18 +1,18 @@
 # Arquitectura Principal
 ```txt
-[ UI / Visualizador / Control ]   GIZ
+[ UI / Visualizador / Control ]   
             |
         (Protocolo)
             |
-[ Servidor / Bridge / Gateway ]   GIZ
+[ Servidor / Bridge / Gateway ]   
             |
         (Protocolo)
             |
-[ Firmware / Control Bajo Nivel ] KONNOR
+[ Firmware / Control Bajo Nivel ] 
             |
         (GPIO / Drivers)
             |
-        [ Hardware ]              KONNOR
+        [ Hardware ]             
 
 ```
 
